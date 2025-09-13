@@ -101,23 +101,23 @@
                     <div class="stream-status">
                         <div class="status-indicator">
                             <div class="status-dot"></div>
-                            <span id="viewer-count">LIVE - Official Zoo Stream</span>
+                            <span id="viewer-count">LIVE - YouTube Official Stream</span>
                         </div>
                         <div class="stream-quality">
-                            <i class="fas fa-hd-video"></i>
-                            <span>HD Quality</span>
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube HD</span>
                         </div>
                     </div>
                     
-                    <!-- Primary Stream: Direct zoodio.live -->
+                    <!-- Primary Stream: YouTube Live Feed -->
                     <div class="stream-player-container">
                         <iframe 
                             id="primary-stream"
                             class="stream-player"
-                            src="https://www.zoodio.live"
+                            src="https://www.youtube.com/embed/Aj1oRNbGJl8?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1"
                             allowfullscreen
                             allow="autoplay; encrypted-media; fullscreen"
-                            title="Moodeng Official Live Stream - Zoodio.live"
+                            title="Moodeng Official Live Stream - YouTube"
                             loading="lazy">
                         </iframe>
                         
@@ -126,13 +126,17 @@
                             <div class="fallback-options">
                                 <h3>🦛 Choose Your Stream Source:</h3>
                                 <div class="stream-buttons">
+                                    <button class="stream-btn" onclick="loadStream('youtube')">
+                                        <i class="fab fa-youtube"></i>
+                                        YouTube Live (Primary)
+                                    </button>
                                     <button class="stream-btn" onclick="loadStream('zoodio')">
-                                        <i class="fas fa-play"></i>
-                                        Zoodio.live (Official)
+                                        <i class="fas fa-video"></i>
+                                        Zoodio.live (Backup)
                                     </button>
                                     <button class="stream-btn" onclick="loadStream('moodeng-tv')">
-                                        <i class="fas fa-video"></i>
-                                        Moodeng.tv
+                                        <i class="fas fa-play"></i>
+                                        Moodeng.tv (Backup)
                                     </button>
                                     <button class="stream-btn" onclick="openExternalStream()">
                                         <i class="fas fa-external-link-alt"></i>

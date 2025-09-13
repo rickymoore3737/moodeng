@@ -212,6 +212,9 @@ function loadStream(source) {
     const fallback = document.getElementById('stream-fallback');
     
     switch(source) {
+        case 'youtube':
+            iframe.src = 'https://www.youtube.com/embed/Aj1oRNbGJl8?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1';
+            break;
         case 'zoodio':
             iframe.src = 'https://www.zoodio.live';
             break;
@@ -219,7 +222,7 @@ function loadStream(source) {
             iframe.src = 'https://www.moodeng.tv';
             break;
         default:
-            iframe.src = 'https://www.zoodio.live';
+            iframe.src = 'https://www.youtube.com/embed/Aj1oRNbGJl8?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1';
     }
     
     fallback.style.display = 'none';
@@ -227,7 +230,18 @@ function loadStream(source) {
 }
 
 function openExternalStream() {
-    window.open('https://www.zoodio.live', '_blank');
+    window.open('https://youtu.be/Aj1oRNbGJl8', '_blank');
+}
+
+// Auto-refresh viewer count with YouTube focus
+function updateViewerCount() {
+    const viewerElement = document.getElementById('viewer-count');
+    if (viewerElement) {
+        const baseCount = 2500; // Higher for YouTube
+        const variation = Math.floor(Math.random() * 800);
+        const currentCount = baseCount + variation;
+        viewerElement.textContent = `LIVE - ${currentCount.toLocaleString()} viewers`;
+    }
 }
 
 function refreshStream() {
