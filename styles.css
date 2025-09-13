@@ -121,6 +121,10 @@ body {
     background-clip: text;
 }
 
+.contract-emoji, .brand-icon {
+    margin-top: -20px;
+}
+
 .nav-menu {
     display: flex;
     align-items: center;
