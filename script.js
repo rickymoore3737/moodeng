@@ -213,10 +213,10 @@ function loadStream(source) {
     
     switch(source) {
         case 'zoodio':
-            iframe.src = 'https://www.zoodio.live/embed/moodeng';
+            iframe.src = 'https://www.zoodio.live';
             break;
         case 'moodeng-tv':
-            iframe.src = 'https://www.moodeng.tv/embed';
+            iframe.src = 'https://www.moodeng.tv';
             break;
         default:
             iframe.src = 'https://www.zoodio.live';

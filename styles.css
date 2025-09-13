@@ -512,10 +512,69 @@ section {
     opacity: 0.8;
 }
 
+/* Stream Player Improvements */
+.stream-player-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
 .stream-player {
     width: 100%;
-    height: 400px;
+    height: 100%;
     border: none;
+    border-radius: 12px;
+}
+
+.stream-fallback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.fallback-options h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.stream-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.stream-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    min-width: 200px;
+}
+
+.stream-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.stream-btn i {
+    margin-right: 8px;
 }
 
 .stream-controls {
@@ -1024,6 +1083,19 @@ section {
         flex-wrap: wrap;
         justify-content: center;
     }
+    
+    .stream-player-container {
+        height: 300px;
+    }
+    
+    .stream-buttons {
+        flex-direction: column;
+    }
+    
+    .stream-btn {
+        min-width: 180px;
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1035,7 +1107,7 @@ section {
         padding: 0 0.5rem;
     }
     
-    .stream-player {
+    .stream-player-container {
         height: 250px;
     }
     
