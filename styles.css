@@ -1585,12 +1585,15 @@ section {
     width: 4rem;
     height: 4rem;
     object-fit: contain;
+    border-radius: 50%;
 }
 
 .floating-logo {
     width: 5rem;
     height: 5rem;
     object-fit: contain;
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
     opacity: 0.1;
 }
 
@@ -1598,12 +1601,15 @@ section {
     width: 3rem;
     height: 3rem;
     object-fit: contain;
+    border-radius: 50%;
 }
 
 .section-logo {
     width: 2rem;
     height: 2rem;
     object-fit: contain;
+    border-radius: 50%;
+    display: inline-block;
     vertical-align: middle;
     margin-right: 0.5rem;
 }
