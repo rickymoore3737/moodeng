@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🦛 MOODENG Live - Professional Streaming Platform</title>
+    <title>🦛 MOODENG Live - Official 24/7 Stream</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -46,19 +46,19 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <i class="fas fa-circle live-dot"></i>
-                <span>LIVE NOW</span>
+                <span>LIVE NOW - Official Zoo Stream</span>
             </div>
             <h1 class="hero-title">
-                Welcome to <span class="gradient-text">MOODENG</span>
-                <br>The Future of <span class="gradient-text">Streaming</span>
+                Watch <span class="gradient-text">MOODENG</span>
+                <br>Live 24/7 from <span class="gradient-text">Thailand</span>
             </h1>
             <p class="hero-subtitle">
-                Watch the world's most adorable pygmy hippo live while investing in the future of meme tokens and supporting wildlife conservation.
+                Official live stream from Khao Kheow Open Zoo featuring the world's most famous pygmy hippo, Moodeng, available 24 hours a day.
             </p>
             <div class="hero-actions">
-                <button class="btn btn-primary">
+                <button class="btn btn-primary" onclick="scrollToStream()">
                     <i class="fas fa-play"></i>
-                    Watch Live Stream
+                    Watch Live Now
                 </button>
                 <button class="btn btn-secondary">
                     <i class="fas fa-coins"></i>
@@ -68,15 +68,15 @@
             <div class="hero-stats">
                 <div class="stat">
                     <div class="stat-number">24/7</div>
-                    <div class="stat-label">Live Stream</div>
+                    <div class="stat-label">Official Stream</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-number">$2.4M</div>
-                    <div class="stat-label">Market Cap</div>
+                    <div class="stat-number">44K+</div>
+                    <div class="stat-label">Peak Viewers</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-number">50K+</div>
-                    <div class="stat-label">Viewers</div>
+                    <div class="stat-number">LIVE</div>
+                    <div class="stat-label">From Thailand</div>
                 </div>
             </div>
         </div>
@@ -88,11 +88,11 @@
             <div class="section-header">
                 <div class="section-badge">
                     <i class="fas fa-video"></i>
-                    <span>Live Stream</span>
+                    <span>Official Live Stream</span>
                 </div>
-                <h2 class="section-title">Watch Moodeng Live</h2>
+                <h2 class="section-title">Moodeng Live from Khao Kheow Zoo</h2>
                 <p class="section-subtitle">
-                    Experience the magic of Moodeng 24/7 from Khao Kheow Open Zoo in Thailand
+                    Watch Moodeng 24/7 through the official zoo streaming platform
                 </p>
             </div>
             
@@ -101,29 +101,57 @@
                     <div class="stream-status">
                         <div class="status-indicator">
                             <div class="status-dot"></div>
-                            <span>LIVE - 1,247 viewers</span>
+                            <span id="viewer-count">LIVE - Official Zoo Stream</span>
                         </div>
                         <div class="stream-quality">
                             <i class="fas fa-hd-video"></i>
                             <span>HD Quality</span>
                         </div>
                     </div>
-                    <iframe 
-                        class="stream-player"
-                        src="https://www.zoodio.live"
-                        allowfullscreen
-                        allow="autoplay; encrypted-media"
-                        title="Moodeng Live Stream">
-                    </iframe>
+                    
+                    <!-- Primary Stream: Zoodio.live -->
+                    <div class="stream-player-container">
+                        <iframe 
+                            id="primary-stream"
+                            class="stream-player"
+                            src="https://www.zoodio.live/embed/moodeng"
+                            allowfullscreen
+                            allow="autoplay; encrypted-media; fullscreen"
+                            title="Moodeng Official Live Stream - Zoodio.live"
+                            loading="lazy">
+                        </iframe>
+                        
+                        <!-- Fallback Stream Options -->
+                        <div class="stream-fallback" id="stream-fallback" style="display: none;">
+                            <div class="fallback-options">
+                                <h3>🦛 Choose Your Stream Source:</h3>
+                                <div class="stream-buttons">
+                                    <button class="stream-btn" onclick="loadStream('zoodio')">
+                                        <i class="fas fa-play"></i>
+                                        Zoodio.live (Official)
+                                    </button>
+                                    <button class="stream-btn" onclick="loadStream('moodeng-tv')">
+                                        <i class="fas fa-video"></i>
+                                        Moodeng.tv
+                                    </button>
+                                    <button class="stream-btn" onclick="openExternalStream()">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        Open in New Tab
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="stream-controls">
                         <div class="control-group">
-                            <button class="control-btn">
-                                <i class="fas fa-volume-up"></i>
-                            </button>
-                            <button class="control-btn">
+                            <button class="control-btn" onclick="toggleFullscreen()">
                                 <i class="fas fa-expand"></i>
                             </button>
-                            <button class="control-btn">
+                            <button class="control-btn" onclick="refreshStream()">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                            <button class="control-btn" onclick="shareStream()">
                                 <i class="fas fa-share"></i>
                             </button>
                         </div>
@@ -132,6 +160,10 @@
                                 <i class="fas fa-clock"></i>
                                 <span>Peak Activity: 8-10 AM & 2-3 PM (Thailand Time)</span>
                             </div>
+                            <div class="info-item">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Moodeng is most active during feeding times</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -139,20 +171,49 @@
                 <div class="stream-sidebar">
                     <div class="sidebar-card">
                         <h3>🦛 About Moodeng</h3>
-                        <p>Born July 10, 2024, Moodeng is a baby pygmy hippo who became an internet sensation with her bouncy personality and adorable antics.</p>
+                        <p>Born July 10, 2024, Moodeng ("bouncy pig") is a baby pygmy hippo who became a global internet sensation. Watch her live from Khao Kheow Open Zoo in Thailand!</p>
+                        <div class="moodeng-facts">
+                            <div class="fact">👶 <strong>Age:</strong> 5 months old</div>
+                            <div class="fact">🏠 <strong>Home:</strong> Khao Kheow Open Zoo</div>
+                            <div class="fact">👨‍👩‍👧‍👦 <strong>Family:</strong> Mom Jona, siblings Nadech, Moo Tun, Moo Waan, Koh</div>
+                        </div>
                     </div>
+                    
                     <div class="sidebar-card">
-                        <h3>📊 Live Stats</h3>
+                        <h3>📊 Stream Stats</h3>
                         <div class="stats-grid">
                             <div class="stat-item">
-                                <span class="stat-value">1,247</span>
-                                <span class="stat-name">Current Viewers</span>
+                                <span class="stat-value" id="current-viewers">LIVE</span>
+                                <span class="stat-name">Official Stream</span>
                             </div>
                             <div class="stat-item">
                                 <span class="stat-value">24/7</span>
-                                <span class="stat-name">Stream Uptime</span>
+                                <span class="stat-name">Available</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">HD</span>
+                                <span class="stat-name">Quality</span>
                             </div>
                         </div>
+                    </div>
+                    
+                    <div class="sidebar-card">
+                        <h3>⏰ Best Viewing Times</h3>
+                        <div class="schedule">
+                            <div class="schedule-item">
+                                <span class="time">8:00 - 10:00 AM</span>
+                                <span class="activity">Morning Play Time</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="time">2:00 - 3:00 PM</span>
+                                <span class="activity">Feeding Time</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="time">All Day</span>
+                                <span class="activity">Sleeping & Relaxing</span>
+                            </div>
+                        </div>
+                        <p class="schedule-note">*Times in Thailand timezone (UTC+7)</p>
                     </div>
                 </div>
             </div>

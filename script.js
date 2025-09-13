@@ -199,3 +199,93 @@ document.addEventListener('DOMContentLoaded', () => {
         }, index * 100);
     });
 });
+
+// Stream Management Functions
+function scrollToStream() {
+    document.getElementById('stream').scrollIntoView({ 
+        behavior: 'smooth' 
+    });
+}
+
+function loadStream(source) {
+    const iframe = document.getElementById('primary-stream');
+    const fallback = document.getElementById('stream-fallback');
+    
+    switch(source) {
+        case 'zoodio':
+            iframe.src = 'https://www.zoodio.live/embed/moodeng';
+            break;
+        case 'moodeng-tv':
+            iframe.src = 'https://www.moodeng.tv/embed';
+            break;
+        default:
+            iframe.src = 'https://www.zoodio.live';
+    }
+    
+    fallback.style.display = 'none';
+    iframe.style.display = 'block';
+}
+
+function openExternalStream() {
+    window.open('https://www.zoodio.live', '_blank');
+}
+
+function refreshStream() {
+    const iframe = document.getElementById('primary-stream');
+    const currentSrc = iframe.src;
+    iframe.src = '';
+    setTimeout(() => {
+        iframe.src = currentSrc;
+    }, 100);
+}
+
+function toggleFullscreen() {
+    const iframe = document.getElementById('primary-stream');
+    if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+    } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen();
+    } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen();
+    }
+}
+
+function shareStream() {
+    if (navigator.share) {
+        navigator.share({
+            title: 'Watch Moodeng Live!',
+            text: 'Check out the adorable Moodeng live from Thailand!',
+            url: window.location.href
+        });
+    } else {
+        // Fallback: copy to clipboard
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            alert('Link copied to clipboard!');
+        });
+    }
+}
+
+// Auto-refresh viewer count (simulated)
+function updateViewerCount() {
+    const viewerElement = document.getElementById('viewer-count');
+    if (viewerElement) {
+        const baseCount = 1200;
+        const variation = Math.floor(Math.random() * 500);
+        const currentCount = baseCount + variation;
+        viewerElement.textContent = `LIVE - ${currentCount.toLocaleString()} viewers`;
+    }
+}
+
+// Initialize stream functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Update viewer count every 30 seconds
+    updateViewerCount();
+    setInterval(updateViewerCount, 30000);
+    
+    // Handle iframe load errors
+    const iframe = document.getElementById('primary-stream');
+    iframe.addEventListener('error', function() {
+        document.getElementById('stream-fallback').style.display = 'block';
+        iframe.style.display = 'none';
+    });
+});
