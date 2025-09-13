@@ -3,28 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moodeng Live - Supporting Khao Kheow Open Zoo</title>
-    <meta name="description" content="Watch Moodeng live and support Khao Kheow Open Zoo through our community token">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>🦛 MOODENG Token Launch - Live Stream & Zoo Fundraising</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
-            --secondary-gradient: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
-            --surface-gradient: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%);
-            --glass-bg: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
-            --text-accent: #6366f1;
-            --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-large: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            --border-radius: 16px;
-            --border-radius-large: 24px;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -32,794 +13,530 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            background-attachment: fixed;
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+            color: #333;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 100%;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Floating Elements */
-        .floating-shapes {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .shape {
-            position: absolute;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            backdrop-filter: blur(10px);
-            border-radius: 50%;
-            animation: float 20s infinite linear;
-        }
-
-        .shape:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .shape:nth-child(2) {
-            width: 120px;
-            height: 120px;
-            top: 60%;
-            right: 10%;
-            animation-delay: -7s;
-        }
-
-        .shape:nth-child(3) {
-            width: 60px;
-            height: 60px;
-            top: 80%;
-            left: 20%;
-            animation-delay: -14s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-30px) rotate(120deg); }
-            66% { transform: translateY(30px) rotate(240deg); }
+            padding: 0;
         }
 
         /* Header */
         .header {
-            background: var(--surface-gradient);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
-            padding: 20px 0;
+            padding: 1rem;
             position: sticky;
             top: 0;
-            z-index: 100;
-            box-shadow: var(--shadow-soft);
-            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 28px;
-            font-weight: 700;
-            background: var(--primary-gradient);
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: transform 0.3s ease;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
-        .logo:hover {
-            transform: scale(1.05);
+        .nav-links a:hover {
+            color: #667eea;
         }
 
-        .logo-emoji {
-            font-size: 32px;
-            animation: bounce 2s infinite;
+        /* Hero Section */
+        .hero {
+            padding: 2rem 1rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-
-        .token-price {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .price-item {
-            background: var(--primary-gradient);
-            color: white;
-            padding: 12px 20px;
-            border-radius: var(--border-radius);
-            font-size: 14px;
-            font-weight: 600;
-            white-space: nowrap;
-            box-shadow: var(--shadow-soft);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .price-item:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        /* Main Content */
-        .main-content {
-            padding: 60px 0;
-        }
-
-        /* Section Base Styles */
-        .section {
-            background: var(--surface-gradient);
-            backdrop-filter: blur(20px);
-            border-radius: var(--border-radius-large);
-            padding: 40px;
-            margin-bottom: 40px;
-            box-shadow: var(--shadow-large);
-            border: 1px solid var(--glass-border);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--primary-gradient);
-        }
-
-        .section-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 32px;
-            font-weight: 700;
-            background: var(--primary-gradient);
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 30px;
-            text-align: center;
-            position: relative;
+            line-height: 1.2;
         }
 
-        .section-subtitle {
-            font-size: 18px;
-            color: var(--text-secondary);
-            text-align: center;
-            margin-bottom: 30px;
-            font-weight: 400;
+        .hero p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Live Stream Section */
-        .livestream-section {
-            text-align: center;
+        .live-stream {
+            padding: 2rem 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            margin: 2rem 1rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
         .live-indicator {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #ef4444, #dc2626);
+            gap: 0.5rem;
+            background: #ff4757;
             color: white;
-            padding: 12px 24px;
+            padding: 0.5rem 1rem;
             border-radius: 50px;
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            box-shadow: var(--shadow-medium);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .live-dot {
-            width: 10px;
-            height: 10px;
-            background: white;
-            border-radius: 50%;
-            animation: pulse 1.5s infinite;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.2); }
-            100% { opacity: 1; transform: scale(1); }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
         }
 
-        .video-container {
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .stream-container {
             position: relative;
             width: 100%;
-            height: 0;
-            padding-bottom: 56.25%;
-            margin: 30px 0;
-            border-radius: var(--border-radius);
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: var(--shadow-large);
-            background: #000;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         }
 
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .stream-iframe {
             width: 100%;
-            height: 100%;
+            height: 450px;
             border: none;
+            border-radius: 15px;
+        }
+
+        .stream-info {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .stream-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .stream-info p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .active-times {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .active-times strong {
+            color: #667eea;
         }
 
         /* Token Info Section */
-        .contract-address {
-            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-            border: 2px solid transparent;
-            background-clip: padding-box;
-            border-radius: var(--border-radius);
-            padding: 30px;
-            margin: 30px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+        .token-info {
+            padding: 2rem 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            margin: 2rem 1rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
-        .contract-address::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--primary-gradient);
-            z-index: -1;
-            margin: -2px;
-            border-radius: var(--border-radius);
+        .token-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
 
-        .contract-label {
-            font-size: 16px;
-            color: var(--text-secondary);
-            margin-bottom: 15px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .contract-value {
-            font-family: 'Space Grotesk', monospace;
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--text-primary);
-            word-break: break-all;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-soft);
-            border: 1px solid #e5e7eb;
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 20px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .btn {
-            flex: 1;
-            min-width: 160px;
-            max-width: 200px;
-            padding: 16px 32px;
-            border: none;
-            border-radius: var(--border-radius);
-            font-size: 16px;
-            font-weight: 600;
-            text-decoration: none;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary {
-            background: var(--primary-gradient);
+        .token-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            box-shadow: var(--shadow-medium);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
         }
 
-        .btn-secondary {
-            background: white;
-            color: var(--text-accent);
-            border: 2px solid var(--text-accent);
-            box-shadow: var(--shadow-soft);
+        .token-card:hover {
+            transform: translateY(-5px);
         }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-large);
+        .token-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
         }
 
-        /* Info Section */
+        .token-card .value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .contract-address {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        /* Moodeng Info Section */
+        .moodeng-info {
+            padding: 2rem 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            margin: 2rem 1rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
         .info-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
         }
 
         .info-card {
-            background: linear-gradient(135deg, #fefefe, #f9fafb);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            border-left: 5px solid;
-            border-image: var(--primary-gradient) 1;
-            box-shadow: var(--shadow-soft);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            padding: 1.5rem;
+            border-radius: 15px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
         }
 
-        .info-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--primary-gradient);
-        }
-
-        .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .info-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            color: var(--text-primary);
-            font-size: 22px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .info-card h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #333;
         }
 
         .info-card p {
-            color: var(--text-secondary);
-            line-height: 1.7;
-            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
         }
 
-        /* Stats Section */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            padding: 2rem 1rem;
         }
 
-        .stat-card {
-            background: var(--surface-gradient);
-            backdrop-filter: blur(10px);
-            border-radius: var(--border-radius);
-            padding: 25px;
-            text-align: center;
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--shadow-soft);
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 1rem;
         }
 
-        .stat-number {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 28px;
-            font-weight: 700;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 5px;
+        .btn-primary {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            color: white;
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
         }
 
-        .stat-label {
-            font-size: 14px;
-            color: var(--text-secondary);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            border: 2px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
         }
 
         /* Footer */
         .footer {
-            background: var(--surface-gradient);
-            backdrop-filter: blur(20px);
-            padding: 40px 0;
             text-align: center;
-            margin-top: 60px;
-            border-top: 1px solid var(--glass-border);
+            padding: 2rem 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            background: rgba(0, 0, 0, 0.1);
         }
 
-        .footer-content {
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--text-accent);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 8px 16px;
-            border-radius: 8px;
-        }
-
-        .footer-links a:hover {
-            background: var(--glass-bg);
-            transform: translateY(-2px);
-        }
-
-        /* Responsive Design */
+        /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            .container {
-                padding: 0 15px;
+            .hero h1 {
+                font-size: 2rem;
             }
-
-            .header-content {
-                justify-content: center;
-                text-align: center;
-            }
-
-            .token-price {
-                justify-content: center;
-                width: 100%;
-            }
-
-            .section {
-                padding: 25px;
-                margin-bottom: 25px;
-            }
-
-            .section-title {
-                font-size: 26px;
-            }
-
-            .action-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                min-width: auto;
-                max-width: none;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .floating-shapes {
+            
+            .nav-links {
                 display: none;
             }
-        }
-
-        @media (min-width: 769px) {
+            
+            .stream-iframe {
+                height: 250px;
+            }
+            
+            .token-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .info-grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
             }
         }
 
         @media (max-width: 480px) {
-            .logo {
-                font-size: 22px;
+            .hero h1 {
+                font-size: 1.8rem;
             }
-
-            .logo-emoji {
-                font-size: 26px;
+            
+            .stream-iframe {
+                height: 200px;
             }
-
-            .price-item {
-                font-size: 12px;
-                padding: 10px 16px;
-            }
-
-            .section-title {
-                font-size: 24px;
-            }
-
-            .contract-value {
-                font-size: 14px;
-            }
-        }
-
-        /* Scroll animations */
-        @media (prefers-reduced-motion: no-preference) {
-            .section {
-                opacity: 0;
-                transform: translateY(30px);
-                animation: fadeInUp 0.6s ease forwards;
-            }
-
-            .section:nth-child(1) { animation-delay: 0.1s; }
-            .section:nth-child(2) { animation-delay: 0.2s; }
-            .section:nth-child(3) { animation-delay: 0.3s; }
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            
+            .live-stream, .token-info, .moodeng-info {
+                margin: 1rem 0.5rem;
+                padding: 1.5rem 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Floating Background Elements -->
-    <div class="floating-shapes">
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">🦛 MOODENG</div>
+                <nav class="nav-links">
+                    <a href="#live">Live Stream</a>
+                    <a href="#token">Token Info</a>
+                    <a href="#about">About Moodeng</a>
+                    <a href="#buy">Buy Now</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>🦛 Welcome to MOODENG Token Launch</h1>
+            <p>Join the cutest crypto revolution! Watch Moodeng live and support Khao Kheow Open Zoo's conservation efforts while investing in the future of meme tokens.</p>
+        </section>
+
+        <!-- Live Stream Section -->
+        <section id="live" class="live-stream">
+            <div class="live-indicator">
+                <div class="live-dot"></div>
+                LIVE NOW
+            </div>
+            
+            <div class="stream-container">
+                <iframe 
+                    class="stream-iframe"
+                    src="https://www.zoodio.live"
+                    allowfullscreen
+                    allow="autoplay; encrypted-media"
+                    title="Moodeng Live Stream - 24/7 from Khao Kheow Open Zoo">
+                </iframe>
+            </div>
+            
+            <div class="stream-info">
+                <h3>🦛 Moodeng Live - 24/7 Official Stream</h3>
+                <p>Watch the world's most famous baby pygmy hippo live from Khao Kheow Open Zoo in Thailand!</p>
+                <div class="active-times">
+                    <strong>🕐 Most Active Times:</strong> 8:00-10:00 AM & 2:00-3:00 PM (Thailand Time)<br>
+                    <small>Moodeng is usually sleeping during other hours as she's still a baby 💤</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Token Information -->
+        <section id="token" class="token-info">
+            <h2 style="text-align: center; font-size: 2rem; font-weight: 800; margin-bottom: 1rem;">💎 Token Information</h2>
+            
+            <div class="token-grid">
+                <div class="token-card">
+                    <h4>Current Price</h4>
+                    <div class="value">$0.00234</div>
+                    <small>+15.7% (24h)</small>
+                </div>
+                
+                <div class="token-card">
+                    <h4>Market Cap</h4>
+                    <div class="value">$2.4M</div>
+                    <small>Fully Diluted</small>
+                </div>
+                
+                <div class="token-card">
+                    <h4>Total Supply</h4>
+                    <div class="value">1B</div>
+                    <small>MOODENG Tokens</small>
+                </div>
+            </div>
+            
+            <div class="contract-address">
+                <h4 style="margin-bottom: 0.5rem; color: #333;">📋 Contract Address</h4>
+                <div style="color: #667eea; font-weight: 600;">TBC - To Be Confirmed</div>
+                <small style="color: #666; display: block; margin-top: 0.5rem;">Contract will be published before launch</small>
+            </div>
+        </section>
+
+        <!-- Moodeng & Zoo Information -->
+        <section id="about" class="moodeng-info">
+            <h2 style="text-align: center; font-size: 2rem; font-weight: 800; margin-bottom: 1rem;">🦛 About Moodeng & Our Mission</h2>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>🌟 Meet Moodeng</h4>
+                    <p>Born on July 10, 2024, Moodeng (meaning "bouncy pig") is a baby pygmy hippopotamus who became an internet sensation at Khao Kheow Open Zoo in Thailand. Her playful personality and adorable bouncy energy have captured hearts worldwide!</p>
+                    <p><strong>Fun Fact:</strong> Her name was chosen by over 20,000 fans through a public poll! 🗳️</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4>🏥 Zoo Fundraising Mission</h4>
+                    <p>A portion of MOODENG token proceeds will support Khao Kheow Open Zoo's conservation efforts, animal care, and educational programs. Help us ensure Moodeng and her hippo family have the best care possible!</p>
+                    <p><strong>Impact:</strong> Your investment directly contributes to wildlife conservation and education in Thailand. 🌱</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Buttons -->
+        <section id="buy" class="action-buttons">
+            <a href="#" class="btn btn-primary">
+                🚀 Buy MOODENG Token
+            </a>
+            <a href="https://dexscreener.com" target="_blank" class="btn btn-secondary">
+                📊 View on DexScreener
+            </a>
+            <a href="https://khaokheow.zoothailand.org" target="_blank" class="btn btn-secondary">
+                🦛 Visit Zoo Website
+            </a>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>🦛 MOODENG Token - Supporting Wildlife Conservation Through Crypto</p>
+            <p style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.7;">Always DYOR (Do Your Own Research) before investing in any cryptocurrency</p>
+        </footer>
     </div>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">
-                    <span class="logo-emoji">🦛</span>
-                    Moodeng Live
-                </a>
-                <div class="token-price">
-                    <div class="price-item" id="token-price">💰 Price: Loading...</div>
-                    <div class="price-item" id="market-cap">📈 Market Cap: Loading...</div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
-            <!-- Live Stream Section -->
-            <section class="section livestream-section">
-                <div class="live-indicator">
-                    <div class="live-dot"></div>
-                    Live Now
-                </div>
-                <h1 class="section-title">Watch Moodeng Live</h1>
-                <p class="section-subtitle">Experience the joy of watching Moodeng, the beloved pygmy hippo from Khao Kheow Open Zoo, live 24/7!</p>
-                <div class="video-container">
-                    <iframe 
-                        src="https://www.youtube.com/embed/QnunNrrPA5g?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1"
-                        title="Moodeng Live Stream"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                
-                <!-- Stats Grid -->
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number" id="viewers">24/7</div>
-                        <div class="stat-label">Live Stream</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">🌍</div>
-                        <div class="stat-label">Global Community</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">💚</div>
-                        <div class="stat-label">Conservation</div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Token Information Section -->
-            <section class="section token-section">
-                <h2 class="section-title">$MOODENG Token</h2>
-                <p class="section-subtitle">Join the community supporting Moodeng and Khao Kheow Open Zoo</p>
-                <div class="contract-address">
-                    <div class="contract-label">Contract Address (Pump.fun)</div>
-                    <div class="contract-value" id="contract-address">🚀 Token launching soon!</div>
-                </div>
-                <div class="action-buttons">
-                    <a href="#" class="btn btn-primary" id="buy-token">
-                        🛒 Buy $MOODENG
-                    </a>
-                    <a href="#" class="btn btn-secondary" id="dexscreener">
-                        📊 View Charts
-                    </a>
-                </div>
-            </section>
-
-            <!-- Information Section -->
-            <section class="section info-section">
-                <h2 class="section-title">Supporting Wildlife Conservation</h2>
-                <p class="section-subtitle">Every token purchase helps fund animal care and conservation efforts</p>
-                <div class="info-grid">
-                    <div class="info-card">
-                        <h3>🦛 About Moodeng</h3>
-                        <p>Moodeng is an adorable pygmy hippo who has captured hearts worldwide with her playful personality and charming antics. Living at Khao Kheow Open Zoo in Thailand, she has become an internet sensation and a symbol of wildlife conservation.</p>
-                    </div>
-                    <div class="info-card">
-                        <h3>🏛️ Khao Kheow Open Zoo</h3>
-                        <p>Located in Chonburi, Thailand, Khao Kheow Open Zoo is home to over 8,000 animals from around the world. The zoo is dedicated to wildlife conservation, education, and providing the best care for animals like Moodeng.</p>
-                    </div>
-                    <div class="info-card">
-                        <h3>💰 How Your Purchase Helps</h3>
-                        <p>Every $MOODENG token purchase generates creator fees that go directly to supporting Khao Kheow Open Zoo. Your investment helps fund animal care, habitat improvements, and conservation efforts.</p>
-                    </div>
-                    <div class="info-card">
-                        <h3>🌟 Community Impact</h3>
-                        <p>By joining the $MOODENG community, you're not just investing in a token - you're supporting wildlife conservation and helping ensure that Moodeng and her friends receive the best possible care.</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="https://www.kkzoo.com/" target="_blank">🏛️ Khao Kheow Zoo</a>
-                    <a href="#" id="footer-dexscreener">📊 DexScreener</a>
-                    <a href="#" id="footer-buy">🛒 Buy Token</a>
-                    <a href="https://pump.fun" target="_blank">🚀 Pump.fun</a>
-                </div>
-                <p>&copy; 2024 Moodeng Live. Supporting wildlife conservation through community.</p>
-                <p style="font-size: 12px; margin-top: 15px; color: #9ca3af;">This is not financial advice. Please do your own research before investing.</p>
-            </div>
-        </div>
-    </footer>
-
     <script>
-        // Enhanced token data management
-        function updateTokenData() {
-            const priceElement = document.getElementById('token-price');
-            const marketCapElement = document.getElementById('market-cap');
-            
-            // Placeholder data - replace with actual API integration
-            priceElement.innerHTML = '💰 Price: <span style="color: #10b981;">Coming Soon</span>';
-            marketCapElement.innerHTML = '📈 Market Cap: <span style="color: #6366f1;">TBC</span>';
-        }
-
-        // Update contract address with enhanced styling
-        function updateContractAddress(address) {
-            const contractElement = document.getElementById('contract-address');
-            if (address && address !== 'TBC') {
-                contractElement.textContent = address;
-                contractElement.style.fontFamily = 'Space Grotesk, monospace';
-            }
-        }
-
-        // Enhanced link updates
-        function updateTokenLinks(contractAddress) {
-            if (contractAddress && contractAddress !== 'TBC') {
-                const buyButtons = document.querySelectorAll('#buy-token, #footer-buy');
-                const dexButtons = document.querySelectorAll('#dexscreener, #footer-dexscreener');
-                
-                buyButtons.forEach(btn => {
-                    btn.href = `https://pump.fun/coin/${contractAddress}`;
-                    btn.innerHTML = '🛒 Buy $MOODENG';
-                });
-                
-                dexButtons.forEach(btn => {
-                    btn.href = `https://dexscreener.com/solana/${contractAddress}`;
-                    btn.innerHTML = '📊 View Charts';
-                });
-            }
-        }
-
-        // Smooth scroll enhancement
-        function initSmoothScroll() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-        }
-
-        // Initialize everything
-        document.addEventListener('DOMContentLoaded', function() {
-            updateTokenData();
-            initSmoothScroll();
-            
-            // Update every 30 seconds when token is live
-            setInterval(updateTokenData, 30000);
-            
-            // Add loading animation to price elements
-            const priceElements = document.querySelectorAll('.price-item');
-            priceElements.forEach(el => {
-                el.style.transition = 'all 0.3s ease';
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
 
-        // Function to be called when token goes live
-        function tokenGoesLive(contractAddress, buyLink, dexLink) {
-            updateContractAddress(contractAddress);
-            updateTokenLinks(contractAddress);
-            
-            // Add success animation
-            const contractDiv = document.getElementById('contract-address');
-            contractDiv.style.animation = 'pulse 0.5s ease-in-out';
-            
-            // Enable real-time price updates here
-            console.log('Token is now live!', contractAddress);
-        }
+        // Add loading animation for iframe
+        const iframe = document.querySelector('.stream-iframe');
+        iframe.addEventListener('load', function() {
+            this.style.opacity = '1';
+        });
+
+        // Mobile menu toggle (if needed)
+        const header = document.querySelector('.header');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > lastScrollY) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            lastScrollY = window.scrollY;
+        });
 
         // Add some interactive elements
-        document.addEventListener('mousemove', function(e) {
-            const shapes = document.querySelectorAll('.shape');
-            const mouseX = e.clientX / window.innerWidth;
-            const mouseY = e.clientY / window.innerHeight;
+        document.querySelectorAll('.token-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
             
-            shapes.forEach((shape, index) => {
-                const speed = (index + 1) * 0.5;
-                const x = mouseX * speed;
-                const y = mouseY * speed;
-                shape.style.transform += ` translate(${x}px, ${y}px)`;
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
             });
         });
     </script>
