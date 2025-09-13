@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🦛 MOODENG Live - Official 24/7 Stream</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦛</text></svg>">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -65,18 +66,33 @@
                     Buy MOODENG Token
                 </button>
             </div>
+            
+            <!-- Contract Address Display -->
+            <div class="contract-display">
+                <div class="contract-label">
+                    <i class="fas fa-file-contract"></i>
+                    Contract Address:
+                </div>
+                <div class="contract-address-hero">
+                    <span class="address-text" id="contract-address">DU6dwLd4EHQJLWMC8AHGytK6yR571DgKMMthrqN2pump</span>
+                    <button class="copy-btn-hero" onclick="copyContractAddress()">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+            
             <div class="hero-stats">
                 <div class="stat">
                     <div class="stat-number">24/7</div>
                     <div class="stat-label">Official Stream</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-number">44K+</div>
-                    <div class="stat-label">Peak Viewers</div>
-                </div>
-                <div class="stat">
                     <div class="stat-number">LIVE</div>
                     <div class="stat-label">From Thailand</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">HD</div>
+                    <div class="stat-label">Quality</div>
                 </div>
             </div>
         </div>
@@ -184,24 +200,6 @@
                     </div>
                     
                     <div class="sidebar-card">
-                        <h3>📊 Stream Stats</h3>
-                        <div class="stats-grid">
-                            <div class="stat-item">
-                                <span class="stat-value" id="current-viewers">LIVE</span>
-                                <span class="stat-name">Official Stream</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-value">24/7</span>
-                                <span class="stat-name">Available</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-value">HD</span>
-                                <span class="stat-name">Quality</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="sidebar-card">
                         <h3>⏰ Best Viewing Times</h3>
                         <div class="schedule">
                             <div class="schedule-item">
@@ -234,7 +232,7 @@
                 </div>
                 <h2 class="section-title">MOODENG Token</h2>
                 <p class="section-subtitle">
-                    Invest in the cutest cryptocurrency while supporting wildlife conservation
+                    Real-time token data powered by DexScreener API
                 </p>
             </div>
             
@@ -248,10 +246,10 @@
                     </div>
                     <div class="card-content">
                         <div class="price-display">
-                            <span class="price-value">$0.00234</span>
-                            <span class="price-change positive">
-                                <i class="fas fa-arrow-up"></i>
-                                +15.7%
+                            <span class="price-value" id="token-price">$0.00</span>
+                            <span class="price-change" id="price-change">
+                                <i class="fas fa-minus"></i>
+                                0%
                             </span>
                         </div>
                         <div class="price-chart">
@@ -270,7 +268,7 @@
                         <h3>Market Cap</h3>
                     </div>
                     <div class="card-content">
-                        <div class="metric-value">$2.4M</div>
+                        <div class="metric-value" id="market-cap">$0</div>
                         <div class="metric-label">Fully Diluted</div>
                     </div>
                 </div>
@@ -278,13 +276,13 @@
                 <div class="token-card">
                     <div class="card-header">
                         <div class="card-icon">
-                            <i class="fas fa-layer-group"></i>
+                            <i class="fas fa-exchange-alt"></i>
                         </div>
-                        <h3>Total Supply</h3>
+                        <h3>24h Volume</h3>
                     </div>
                     <div class="card-content">
-                        <div class="metric-value">1B</div>
-                        <div class="metric-label">MOODENG Tokens</div>
+                        <div class="metric-value" id="volume-24h">$0</div>
+                        <div class="metric-label">Trading Volume</div>
                     </div>
                 </div>
                 
@@ -297,28 +295,39 @@
                     </div>
                     <div class="card-content">
                         <div class="contract-address">
-                            <span class="address-text">TBC - Coming Soon</span>
-                            <button class="copy-btn">
+                            <span class="address-text" id="contract-address-display">DU6dwLd4EHQJLWMC8AHGytK6yR571DgKMMthrqN2pump</span>
+                            <button class="copy-btn" onclick="copyContractAddress()">
                                 <i class="fas fa-copy"></i>
                             </button>
                         </div>
                         <div class="contract-status">
                             <i class="fas fa-shield-alt"></i>
-                            <span>Verified & Audited</span>
+                            <span>Solana Network</span>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="token-actions">
-                <button class="btn btn-primary btn-large">
+                <button class="btn btn-primary btn-large" onclick="buyToken()">
                     <i class="fas fa-shopping-cart"></i>
                     Buy MOODENG Token
                 </button>
-                <button class="btn btn-outline">
+                <button class="btn btn-outline" onclick="viewOnDexScreener()">
                     <i class="fas fa-chart-bar"></i>
                     View on DexScreener
                 </button>
+            </div>
+            
+            <!-- Data Status -->
+            <div class="data-status">
+                <div class="status-item">
+                    <i class="fas fa-sync-alt" id="data-sync-icon"></i>
+                    <span id="data-status-text">Loading token data...</span>
+                </div>
+                <div class="last-updated">
+                    Last updated: <span id="last-updated">Never</span>
+                </div>
             </div>
         </div>
     </section>
@@ -336,16 +345,6 @@
                     <p class="about-text">
                         Every MOODENG token purchase directly supports Khao Kheow Open Zoo's conservation efforts, animal care programs, and educational initiatives. Join us in making a positive impact while investing in the future of cryptocurrency.
                     </p>
-                    <div class="impact-stats">
-                        <div class="impact-item">
-                            <div class="impact-number">$50K+</div>
-                            <div class="impact-label">Donated to Conservation</div>
-                        </div>
-                        <div class="impact-item">
-                            <div class="impact-number">10K+</div>
-                            <div class="impact-label">Community Members</div>
-                        </div>
-                    </div>
                     <button class="btn btn-primary">
                         <i class="fas fa-external-link-alt"></i>
                         Visit Khao Kheow Zoo
