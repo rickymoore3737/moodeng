@@ -78,7 +78,7 @@ function copyContractAddress() {
         });
         
         // Show enhanced toast notification
-        showToast('🦛 Contract address copied! Ready to trade MOODENG!', 'success');
+        showToast('Contract address copied! Ready to trade MOODENG!', 'success');
     }).catch(err => {
         console.error('Failed to copy: ', err);
         showToast('❌ Failed to copy address. Please try again!', 'error');
@@ -246,7 +246,7 @@ function toggleFullscreen() {
 function shareStream() {
     if (navigator.share) {
         navigator.share({
-            title: '🦛 MOODENG Live Stream',
+            title: 'MOODENG Live Stream',
             text: 'Watch Moodeng the pygmy hippo live 24/7!',
             url: window.location.href
         });
@@ -267,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Display current token data immediately
     updateTokenDisplay();
     
-    console.log('🦛 MOODENG Live initialized!');
+    console.log('MOODENG Live initialized!');
     console.log(`Token Contract: ${TOKEN_CONTRACT}`);
     console.log('Current Token Data:', tokenData);
 });

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOODENG Live - Official 24/7 Stream</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦛</text></svg>">
+    <link rel="icon" href="moodeng_logo.png">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -117,82 +117,6 @@
                             <span>HD Quality</span>
                         </div>
                     </div>
-                    
-                    <!-- Primary Stream: Live Feed -->
-                    <div class="stream-player-container">
-                        <iframe 
-                            id="primary-stream"
-                            class="stream-player"
-                            src="https://www.youtube.com/embed/Aj1oRNbGJl8?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1"
-                            allowfullscreen
-                            allow="autoplay; encrypted-media; fullscreen"
-                            title="Moodeng Official Live Stream"
-                            loading="lazy">
-                        </iframe>
-                        
-                        <!-- Fallback Stream Options -->
-                        <div class="stream-fallback" id="stream-fallback" style="display: none;">
-                            <div class="fallback-options">
-                                <h3>🦛 Choose Your Stream Source:</h3>
-                                <div class="stream-buttons">
-                                    <button class="stream-btn" onclick="loadStream('primary')">
-                                        <i class="fas fa-play"></i>
-                                        Primary Stream
-                                    </button>
-                                    <button class="stream-btn" onclick="loadStream('zoodio')">
-                                        <i class="fas fa-video"></i>
-                                        Zoodio.live (Backup)
-                                    </button>
-                                    <button class="stream-btn" onclick="loadStream('moodeng-tv')">
-                                        <i class="fas fa-play"></i>
-                                        Moodeng.tv (Backup)
-                                    </button>
-                                    <button class="stream-btn" onclick="openExternalStream()">
-                                        <i class="fas fa-external-link-alt"></i>
-                                        Open in New Tab
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="stream-controls">
-                        <div class="control-group">
-                            <button class="control-btn" onclick="toggleFullscreen()">
-                                <i class="fas fa-expand"></i>
-                            </button>
-                            <button class="control-btn" onclick="refreshStream()">
-                                <i class="fas fa-sync-alt"></i>
-                            </button>
-                            <button class="control-btn" onclick="shareStream()">
-                                <i class="fas fa-share"></i>
-                            </button>
-                        </div>
-                        <div class="stream-info">
-                            <div class="info-item">
-                                <i class="fas fa-clock"></i>
-                                <span>Peak Activity: 8-10 AM & 2-3 PM (Thailand Time)</span>
-                            </div>
-                            <div class="info-item">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Moodeng is most active during feeding times</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="stream-container">
-                    <div class="stream-wrapper">
-                        <div class="stream-status">
-                            <div class="status-indicator">
-                                <div class="status-dot"></div>
-                                <span id="viewer-count">LIVE - YouTube Official Stream</span>
-                            </div>
-                            <div class="stream-quality">
-                                <i class="fab fa-youtube"></i>
-                                <span>YouTube HD</span>
-                            </div>
-                        </div>
                         
                         <!-- Primary Stream: YouTube Live Feed -->
                         <div class="stream-player-container">
