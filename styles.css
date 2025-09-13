@@ -111,7 +111,7 @@ body {
 }
 
 .brand-icon {
-    font-size: 1.5rem;
+    font-size: 4rem;
 }
 
 .brand-accent {
@@ -225,7 +225,7 @@ body {
 
 .floating-element {
     position: absolute;
-    font-size: 2rem;
+    font-size: 5rem;
     opacity: 0.1;
     animation: float 6s ease-in-out infinite;
 }
@@ -1276,7 +1276,7 @@ section {
 }
 
 .contract-hippo {
-    font-size: 2.5rem;
+    font-size: 6rem;
     animation: bounce 2s infinite;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
@@ -1467,7 +1467,7 @@ section {
 }
 
 .contract-emoji {
-    font-size: 1.25rem;
+    font-size: 3rem;
     animation: gentle-bounce 3s ease-in-out infinite;
 }
 
