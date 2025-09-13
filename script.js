@@ -207,7 +207,7 @@ function loadStream(source) {
     let streamUrl;
     switch(source) {
         case 'youtube':
-            streamUrl = 'https://www.youtube.com/embed/Aj1oRNbGJl8?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1';
+            streamUrl = 'https://www.youtube.com/embed/Aj1oRNbGJl8?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1&vq=hd1080';
             break;
         case 'zoodio':
             streamUrl = 'https://www.zoodio.live';
@@ -216,7 +216,7 @@ function loadStream(source) {
             streamUrl = 'https://moodeng.tv';
             break;
         default:
-            streamUrl = 'https://www.youtube.com/embed/Aj1oRNbGJl8?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1';
+            streamUrl = 'https://www.youtube.com/embed/Aj1oRNbGJl8?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1&vq=hd1080';
     }
     
     iframe.src = streamUrl;
