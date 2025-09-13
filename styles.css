@@ -1460,6 +1460,7 @@ section {
     padding: 0;
     background: none;
     border: none;
+    padding-bottom: 25px;
 }
 
 .contract-header {
